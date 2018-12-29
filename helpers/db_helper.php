@@ -12,7 +12,8 @@ function get_db_connect()
         echo($e->getMessage());
         die();
     }
-    $dbh->setAttribute(PDO::ARRT_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $dbh;
 }
 
 function email_exists($dbh, $email)
